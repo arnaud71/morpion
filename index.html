@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f5ef">
+    <title>Morpion — À vous de jouer</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <header class="topbar"><a class="brand" href="./"><span class="brand-icon" aria-hidden="true">✳</span> petit jeu.</a><span class="edition">LES CLASSIQUES · N° 01</span></header>
+    <main>
+      <section class="intro">
+        <p class="eyebrow">UN DUEL, NEUF CASES.</p>
+        <h1>Le morpion<span>.</span></h1>
+        <p class="description">À deux, c’est mieux. Alignez trois symboles<br>et savourez votre petite victoire.</p>
+      </section>
+      <section class="game" aria-label="Partie de morpion">
+        <div class="players">
+          <div class="player active" id="player-x"><span class="token x" aria-hidden="true">×</span><div><span class="player-name">JOUEUR 1</span><strong>Les croix</strong></div><span class="turn-dot" aria-hidden="true"></span></div>
+          <span class="versus">vs</span>
+          <div class="player" id="player-o"><span class="token o" aria-hidden="true">○</span><div><span class="player-name">JOUEUR 2</span><strong>Les ronds</strong></div><span class="turn-dot" aria-hidden="true"></span></div>
+        </div>
+        <p class="status" id="status" role="status" aria-live="polite">Les croix ouvrent le bal.</p>
+        <div class="board" aria-label="Grille de jeu">
+          <button class="cell" aria-label="Ligne 1, colonne 1, vide" data-index="0"></button>
+          <button class="cell" aria-label="Ligne 1, colonne 2, vide" data-index="1"></button>
+          <button class="cell" aria-label="Ligne 1, colonne 3, vide" data-index="2"></button>
+          <button class="cell" aria-label="Ligne 2, colonne 1, vide" data-index="3"></button>
+          <button class="cell" aria-label="Ligne 2, colonne 2, vide" data-index="4"></button>
+          <button class="cell" aria-label="Ligne 2, colonne 3, vide" data-index="5"></button>
+          <button class="cell" aria-label="Ligne 3, colonne 1, vide" data-index="6"></button>
+          <button class="cell" aria-label="Ligne 3, colonne 2, vide" data-index="7"></button>
+          <button class="cell" aria-label="Ligne 3, colonne 3, vide" data-index="8"></button>
+        </div>
+        <button class="restart" id="restart"><span aria-hidden="true">↻</span> Nouvelle partie</button>
+        <p class="hint">Un clic, un symbole. À chacun son tour.</p>
+      </section>
+      <aside class="rules"><span class="rules-icon" aria-hidden="true">✧</span><p><strong>Simple comme trois à la suite.</strong><br>Une ligne, une colonne ou une diagonale :<br>le premier qui en aligne trois gagne.</p></aside>
+    </main>
+    <footer><span>Moins d’écrans. Plus de moments ensemble.</span><span>FAIT POUR JOUER.</span></footer>
+  </body>
+</html>

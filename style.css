@@ -1,0 +1,49 @@
+:root { color-scheme: light; --paper: #f7f5ef; --ink: #263c35; --muted: #7b8278; --green: #32654f; --orange: #cf7957; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: 'DM Sans', 'Segoe UI', sans-serif; }
+button, a { -webkit-tap-highlight-color: transparent; }
+.topbar { max-width: 1240px; margin: auto; padding: 30px 48px; display: flex; align-items: center; justify-content: space-between; }
+.brand { display: flex; gap: 10px; align-items: center; text-decoration: none; color: var(--ink); font-size: 23px; font-weight: 700; letter-spacing: -1px; }
+.brand-icon { font-size: 34px; color: var(--green); }
+.edition, .eyebrow, .player-name, footer > :last-child { font-size: 10px; letter-spacing: 2px; font-weight: 700; }
+.edition { color: var(--muted); }
+main { max-width: 700px; margin: 36px auto 60px; text-align: center; }
+.eyebrow { color: var(--green); letter-spacing: 2.4px; margin-bottom: 17px; }
+h1 { font-family: 'Manrope', sans-serif; font-size: clamp(44px, 8vw, 64px); line-height: 1.15; letter-spacing: -3.6px; margin: 0 0 18px; font-weight: 800; }
+h1 > span { color: var(--orange); }
+.description { color: var(--muted); line-height: 1.7; font-size: 14px; margin: 0; }
+.game { margin: 33px auto 0; width: min(408px, calc(100% - 40px)); }
+.players { display: flex; align-items: center; gap: 13px; }
+.player { display: flex; align-items: center; text-align: left; gap: 10px; border: 1px solid #dfE2d9; border-radius: 12px; padding: 14px 12px; flex: 1; transition: background .2s, border-color .2s; }
+.player.active { background: #eaf0e7; border-color: #a6bca4; }
+#player-o.active { background: #f5eae0; border-color: #dbb69e; }
+.token { font-family: sans-serif; font-size: 36px; line-height: 1; }
+.x { color: var(--green); }
+.o { color: var(--orange); }
+.player-name { display: block; font-size: 8px; letter-spacing: 1.3px; color: var(--muted); margin-bottom: 4px; white-space: nowrap; }
+.player strong { font-size: 12px; font-weight: 600; white-space: nowrap; }
+.turn-dot { width: 6px; height: 6px; border-radius: 50%; background: transparent; margin-left: auto; }
+.active .turn-dot { background: var(--green); }
+#player-o.active .turn-dot { background: var(--orange); }
+.versus { color: #a0a397; font-size: 11px; font-style: italic; }
+.status { margin: 23px 0 18px; font-size: 13px; min-height: 20px; }
+.board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; background: #edece4; padding: 12px; border: 1px solid #e3e3d8; border-radius: 21px; box-shadow: 0 10px 28px #31433106; }
+.cell { aspect-ratio: 1; min-width: 0; border: 1px solid #e5e6dd; background: #fffef9; border-radius: 11px; color: var(--green); font-family: sans-serif; font-size: clamp(50px, 13vw, 76px); font-weight: 400; line-height: 1; cursor: pointer; transition: background .15s, transform .15s; }
+.cell:not(:disabled):hover { background: #e8eee3; transform: translateY(-2px); }
+.cell:disabled { cursor: default; opacity: 1; }
+.cell.o { color: var(--orange); }
+.cell.winner { background: #dce9d7; border-color: #abc19e; }
+.cell.winner.o { background: #f5e0cf; border-color: #dab293; }
+button:focus-visible, a:focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; }
+.restart { margin-top: 23px; border: 1px solid #ced5c8; background: transparent; color: var(--ink); padding: 12px 24px; border-radius: 8px; font: 500 12px 'DM Sans', sans-serif; cursor: pointer; transition: background .15s; }
+.restart:hover { background: #e8ece1; }
+.restart > span { font-size: 18px; vertical-align: -1px; margin-right: 7px; }
+.hint { font-size: 10px; color: #929789; margin-top: 14px; }
+.rules { display: flex; justify-content: center; align-items: center; gap: 14px; margin-top: 34px; text-align: left; }
+.rules-icon { font-size: 31px; color: var(--orange); }
+.rules p { font-size: 11px; line-height: 1.8; color: var(--muted); margin: 0; }
+.rules strong { color: #5a675b; font-weight: 500; }
+footer { max-width: 1144px; margin: auto; border-top: 1px solid #e1e3d8; display: flex; justify-content: space-between; padding: 22px 0; font-size: 10px; color: #909686; }
+footer > :last-child { font-size: 8px; }
+@media (max-width: 600px) { .topbar { padding: 22px 24px; } .edition { font-size: 8px; letter-spacing: 1px; } main { margin-top: 28px; margin-bottom: 40px; } footer { margin: 0 24px; gap: 18px; line-height: 1.8; } footer > :last-child { white-space: nowrap; } .player { gap: 7px; padding: 12px 9px; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
